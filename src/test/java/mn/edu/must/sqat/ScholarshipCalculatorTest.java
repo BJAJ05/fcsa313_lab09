@@ -151,4 +151,39 @@ class ScholarshipCalculatorTest {
     void gpaLoop_manyIterations_fourScores_returns2point5() {
         assertEquals(2.5, calculator.gpa(new double[] { 95, 85, 75, 65 }), 0.001);
     }
+
+    @Test
+    void letterGrade_score100_returnsA() {
+        assertEquals("A", calculator.letterGrade(100));
+    }
+
+    @Test
+    void letterGrade_score90_returnsA() {
+        assertEquals("A", calculator.letterGrade(90));
+    }
+
+    @Test
+    void letterGrade_score89point99_returnsB() {
+        assertEquals("B", calculator.letterGrade(89.99));
+    }
+
+    @Test
+    void letterGrade_score69point99_returnsD() {
+        assertEquals("D", calculator.letterGrade(69.99));
+    }
+
+    @Test
+    void letterGrade_score60_returnsD() {
+        assertEquals("D", calculator.letterGrade(60));
+    }
+
+    @Test
+    void letterGrade_score59point99_returnsF() {
+        assertEquals("F", calculator.letterGrade(59.99));
+    }
+
+    @Test
+    void letterGrade_score0_returnsF() {
+        assertEquals("F", calculator.letterGrade(0));
+    }
 }
