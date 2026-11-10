@@ -49,7 +49,7 @@ VS Code-ийн Java өргөтгөл `target/classes`-г өөр compiler-аар 
 
 ## Хэсэг B: CFG ба 100% branch
 
-`scholarship()`-ийн control flow graph-г draw.io дээр зурсан: [`cfg.png`](cfg.png).
+`scholarship()`-ийн control flow graph-г draw.io дээр зурсан: ![cfg.png](cfg.png).
 
 CFG-д 9 шийдвэрийн зангилаа (D1-D9) байгаа бөгөөд ирмэг тус бүр T/F тэмдэглэгээтэй. Нийт 18 ирмэг нь JaCoCo-гийн `scholarship()`-д тоолдог 18 салаатай таарна.
 Ирмэг бүр дээр түүнийг дайрч буй тестийн нэрийг бичсэн ба эдгээр нэр нь `ScholarshipCalculatorTest.java` дахь бодит метод нэртэй яг таарна.
