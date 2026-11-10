@@ -127,4 +127,28 @@ class ScholarshipCalculatorTest {
     void scholarship_lowGpa_returns0() {
         assertEquals(0, calculator.scholarship(2.5, 16, false));
     }
+
+    @Test
+    void gpaLoop_zeroIterations_emptyArray_throws() {
+        IllegalArgumentException ex = assertThrows(IllegalArgumentException.class,
+                () -> calculator.gpa(new double[] {}));
+        assertEquals("Дүнгүй голч бодох боломжгүй", ex.getMessage());
+    }
+
+    @Test
+    void gpaLoop_zeroIterations_nullArray_throws() {
+        IllegalArgumentException ex = assertThrows(IllegalArgumentException.class,
+                () -> calculator.gpa(null));
+        assertEquals("Дүнгүй голч бодох боломжгүй", ex.getMessage());
+    }
+
+    @Test
+    void gpaLoop_oneIteration_singleScore95_returns4() {
+        assertEquals(4.0, calculator.gpa(new double[] { 95 }), 0.001);
+    }
+
+    @Test
+    void gpaLoop_manyIterations_fourScores_returns2point5() {
+        assertEquals(2.5, calculator.gpa(new double[] { 95, 85, 75, 65 }), 0.001);
+    }
 }
